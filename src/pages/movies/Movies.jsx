@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Movies() {
   const [data, setData] = useState("");
+  const [friday, setFriday] = useState("");
+
   // let myPromise = new Promise(function (myresolve, myreject) {
   //   let value = 1;
   //   if (value == 1) {
@@ -42,15 +44,20 @@ function Movies() {
 
   async function test1() {
     try {
-      let data = await axios({ url: "http://localhost:5000/heavy" });
-      console.log(data.data);
-      setData(data.data);
+      let abc = await axios({ url: "http://localhost:5000/heavy" });
+      console.log(abc.data);
+      setFriday(abc.data);
     } catch (err) {
       window.alert(err.message);
       console.log(err.message);
     }
   }
-  console.log(data);
+
+  useEffect(() => {
+    test();
+    test1();
+    console.log("This is my render");
+  }, []);
 
   return (
     <>
@@ -64,10 +71,12 @@ function Movies() {
         className="bg-red-700 rounded-md  ml-8 text-white"
         onClick={test1}
       >
-        Click Me 1
+        Click Me
       </button>
 
-      {data.number}
+      <div className="flex mt-5">
+        <iframe src={friday.video}></iframe>
+      </div>
     </>
   );
 }
