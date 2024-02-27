@@ -27,6 +27,15 @@ function NavBar() {
             </NavLink>
           </nav>
           <FiSearch className="text-xl"></FiSearch>
+          <NavLink
+            to="/login"
+            className="ml-6 mr-6 hover:text-gray-300 text-xl"
+          >
+            Login
+          </NavLink>
+          <NavLink to="/signup" className="mr-4 hover:text-gray-300 text-xl">
+            Sign Up
+          </NavLink>
         </div>
       </header>
     </>

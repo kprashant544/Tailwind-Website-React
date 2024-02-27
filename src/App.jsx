@@ -7,6 +7,9 @@ import Pricing from "./pages/pricing/Pricing";
 import Movies from "./pages/movies/Movies";
 import Series from "./pages/series/Series";
 import Home from "./pages/home/Home";
+// import Login from "./pages/login/Login";
+import Login2 from "./pages/login/Login2";
+import SignUp from "./pages/login/SignUp";
 function App() {
   return (
     <>
@@ -17,6 +20,8 @@ function App() {
           <Route path="/series" element={<Series />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login2 />} />
+          <Route path="/signup" element={<SignUp />} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>

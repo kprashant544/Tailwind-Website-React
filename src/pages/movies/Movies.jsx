@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API_URL } from "../../config/EnvironmentVariables";
 
 function Movies() {
   const [data, setData] = useState("");
@@ -32,7 +33,7 @@ function Movies() {
 
   async function test() {
     try {
-      let data = await axios({ url: "http://localhost:5000/msg" });
+      let data = await axios.get(`${API_URL}/msg`);
       console.log(data.data);
       setData(data.data);
     } catch (err) {
@@ -44,7 +45,7 @@ function Movies() {
 
   async function test1() {
     try {
-      let abc = await axios({ url: "http://localhost:5000/heavy" });
+      let abc = await axios.get(`${API_URL}/heavy`);
       console.log(abc.data);
       setFriday(abc.data);
     } catch (err) {
