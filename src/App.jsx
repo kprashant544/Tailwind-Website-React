@@ -10,6 +10,9 @@ import Home from "./pages/home/Home";
 // import Login from "./pages/login/Login";
 import Login2 from "./pages/login/Login2";
 import SignUp from "./pages/login/SignUp";
+import Admin from "./pages/admin/Admin";
+import Protected from "./components/layout/Protected";
+import AdminLayout from "./pages/admin/AdminLayout";
 function App() {
   return (
     <>
@@ -24,6 +27,10 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
         </Route>
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/admin" element={<Protected />}>
+          <Route index element={<Admin />} />
+          <Route path="dashboard" element={<AdminLayout />} />
+        </Route>
       </Routes>
     </>
   );
