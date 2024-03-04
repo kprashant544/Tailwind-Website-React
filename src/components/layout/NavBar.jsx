@@ -13,6 +13,9 @@ function NavBar() {
             <NavLink to="/" className="mr-5 hover:text-gray-300 text-xl">
               Home
             </NavLink>
+            <NavLink to="/about" className="mr-5 hover:text-gray-300 text-xl">
+              About
+            </NavLink>
             <NavLink to="/movies" className="mr-5 hover:text-gray-300 text-xl">
               Movies
             </NavLink>

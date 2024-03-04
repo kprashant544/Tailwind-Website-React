@@ -1,3 +1,5 @@
+import { NavLink, Outlet } from "react-router-dom";
+
 function AdminLayout() {
   return (
     <>
@@ -17,13 +19,13 @@ function AdminLayout() {
             <h2 className="text-lg font-bold mb-4">Navigation</h2>
             <ul className="space-y-2">
               <li className="hover:bg-gray-200 p-2 rounded">
-                <a href="#">Dashboard</a>
+                <NavLink to="Dashboard">Dashboard</NavLink>
               </li>
               <li className="hover:bg-gray-200 p-2 rounded">
-                <a href="#">Users</a>
+                <NavLink to="users">Users</NavLink>
               </li>
               <li className="hover:bg-gray-200 p-2 rounded">
-                <a href="#">Settings</a>
+                <NavLink to="settings">Settings</NavLink>
               </li>
             </ul>
           </aside>
@@ -31,10 +33,7 @@ function AdminLayout() {
           {/* Main Content Area */}
           <section className="flex-grow p-4">
             <h2 className="text-lg font-bold mb-4">Welcome, Admin!</h2>
-            <p>
-              This is a simple admin dashboard where you can manage various
-              aspects of your application.
-            </p>
+            <Outlet />
             {/* Add your content here, like charts, tables, forms, etc. */}
           </section>
         </main>
