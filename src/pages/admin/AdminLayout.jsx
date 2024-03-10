@@ -15,7 +15,7 @@ function AdminLayout() {
         {/* Main Content */}
         <main className="flex flex-grow p-4">
           {/* Left Sidebar */}
-          <aside className="w-64 bg-white shadow-md p-4">
+          <div className="w-64 bg-white shadow-md p-4">
             <h2 className="text-lg font-bold mb-4">Navigation</h2>
             <ul className="space-y-2">
               <li className="hover:bg-gray-200 p-2 rounded">
@@ -28,7 +28,7 @@ function AdminLayout() {
                 <NavLink to="settings">Settings</NavLink>
               </li>
             </ul>
-          </aside>
+          </div>
 
           {/* Main Content Area */}
           <section className="flex-grow p-4">

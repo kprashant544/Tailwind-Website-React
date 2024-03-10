@@ -20,11 +20,11 @@ function Side1() {
   }
   useEffect(() => {
     dynamicAbout();
-  }, []);
+  }, [params]);
 
   return (
     <>
-      <div>Side1</div>
+      <div>{data.name}</div>
     </>
   );
 }
