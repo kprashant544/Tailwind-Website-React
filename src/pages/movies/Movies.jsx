@@ -62,14 +62,17 @@ function Movies() {
 
   return (
     <>
-      <button className="bg-red-700 rounded-md  ml-8 text-white" onClick={test}>
+      <button
+        className="bg-red-700 w-[5%] rounded-md  ml-8 text-white"
+        onClick={test}
+      >
         Click Me
       </button>
 
-      {data.name}
+      <div className="flex mt-5">{data.name}</div>
 
       <button
-        className="bg-red-700 rounded-md  ml-8 text-white"
+        className="bg-red-700 w-[5%] rounded-md  ml-8 text-white"
         onClick={test1}
       >
         Click Me

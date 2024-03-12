@@ -22,6 +22,8 @@ import Side1 from "./pages/about/components/Side1";
 import GlobalContext from "./GlobalContext.jsx";
 import { useState } from "react";
 import ReactForm from "./form/ReactForm.jsx";
+import Table from "./table/Table.jsx";
+import MatReactTable from "./table/MatReactTable.jsx";
 
 function App() {
   const [theme, setTheme] = useState({
@@ -52,6 +54,8 @@ function App() {
             <Route path="/login" element={<Login2 />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/reactform" element={<ReactForm />} />
+            <Route path="/table" element={<Table />} />
+            <Route path="/table1" element={<MatReactTable />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
 

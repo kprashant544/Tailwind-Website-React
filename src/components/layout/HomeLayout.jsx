@@ -5,11 +5,11 @@ import Footer from "./Footer";
 function HomeLayout() {
   return (
     <>
-      <div>
+      <div className="flex flex-col min-h-screen">
         <NavBar />
 
         <Outlet />
-        <div>
+        <div className="mt-auto">
           <Footer />
         </div>
       </div>
