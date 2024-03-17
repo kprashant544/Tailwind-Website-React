@@ -24,7 +24,6 @@ import { useState } from "react";
 import ReactForm from "./form/ReactForm.jsx";
 import Table from "./table/Table.jsx";
 import MatReactTable from "./table/MatReactTable.jsx";
-import Table1 from "./table/Table1.jsx";
 import Form1 from "./form/Form1.jsx";
 
 function App() {
@@ -58,7 +57,6 @@ function App() {
             <Route path="/reactform" element={<ReactForm />} />
             <Route path="/table" element={<Table />} />
             <Route path="/table0" element={<MatReactTable />} />
-            <Route path="/table1" element={<Table1 />} />
             <Route path="/form1" element={<Form1 />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
