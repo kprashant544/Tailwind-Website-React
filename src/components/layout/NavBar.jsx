@@ -69,6 +69,12 @@ function NavBar() {
           <NavLink to="/signup" className="mr-4 hover:text-gray-300 text-xl">
             Sign Up
           </NavLink>
+          <NavLink to="/login1" className="mr-4 hover:text-gray-300 text-xl">
+            LoginPage
+          </NavLink>
+          <NavLink to="/register" className="mr-4 hover:text-gray-300 text-xl">
+            Register
+          </NavLink>
         </div>
       </header>
     </>

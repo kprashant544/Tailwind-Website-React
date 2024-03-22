@@ -25,6 +25,9 @@ import ReactForm from "./form/ReactForm.jsx";
 import Table from "./table/Table.jsx";
 import MatReactTable from "./table/MatReactTable.jsx";
 import Form1 from "./form/Form1.jsx";
+import Login from "./loginPage/Login.jsx";
+import Register from "./registerPage/Register.jsx";
+import Select from "./pages/animations/Select.jsx";
 
 function App() {
   const [theme, setTheme] = useState({
@@ -58,6 +61,9 @@ function App() {
             <Route path="/table" element={<Table />} />
             <Route path="/table0" element={<MatReactTable />} />
             <Route path="/form1" element={<Form1 />} />
+            <Route path="/login1" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/select" element={<Select />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
 
