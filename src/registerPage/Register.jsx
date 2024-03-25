@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { API_URL1 } from "../config/EnvironmentVariables";
 import axios from "axios";
+import useTheme from "../store/useTheme";
 
 // import { useNavigate } from "react-router-dom";
 
 function Register() {
   // const navigate = useNavigate();
+
+  const { color, bgColor, setColor, setDefault } = useTheme();
+  console.log(color, bgColor);
   const [registerdata, setRegisterData] = useState([]);
   const {
     register,
@@ -49,6 +53,8 @@ function Register() {
 
   return (
     <>
+      <button onClick={() => setColor("blue", "green")}> change color</button>
+      <button onClick={setDefault}> default color</button>
       <div className="flex gap-3">
         <div className="flex justify-center mt-[15px] ml-[35rem] bg-[#a7c7a7] h-[420px] w-[30%] rounded-xl">
           <form

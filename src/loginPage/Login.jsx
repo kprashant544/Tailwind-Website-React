@@ -2,7 +2,10 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { Navigate, useNavigate } from "react-router-dom";
+import useTheme from "../store/useTheme";
 function Login() {
+  const { color, bgColor, setColor, setDefault } = useTheme();
+  console.log(color, bgColor);
   const cookie = Cookies.get("token");
   const navigate = useNavigate();
   const {
@@ -29,6 +32,8 @@ function Login() {
   }
   return (
     <>
+      <button onClick={() => setColor("blue", "green")}> change color</button>
+      <button onClick={setDefault}> default color</button>
       {!cookie ? (
         <div>
           <div className="flex justify-center mt-7 ml-[35rem] bg-[#a7c7a7] h-[350px] w-[25%] rounded-xl">
