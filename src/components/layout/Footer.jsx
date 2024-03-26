@@ -1,7 +1,14 @@
+import useTheme from "../../store/useTheme";
+
 function Footer() {
+  const { theme } = useTheme();
+  console.log(theme);
   return (
     <>
-      <footer className="text-gray-600 body-font bg-black ">
+      <footer
+        style={{ backgroundColor: theme.bgColor, color: theme.color }}
+        className="text-gray-600 body-font bg-black "
+      >
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <span className=" text-white ml-3 text-xl">StreamLab</span>

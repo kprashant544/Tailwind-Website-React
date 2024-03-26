@@ -1,30 +1,49 @@
 import { NavLink } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
-import GlobalContext from "../../GlobalContext";
-import { useContext } from "react";
+// import GlobalContext from "../../GlobalContext";
+// import { useContext } from "react";
+import useTheme from "../../store/useTheme";
 
 function NavBar() {
-  const contextValues = useContext(GlobalContext);
-  const { theme, setTheme } = contextValues;
-  const { color, backgroundcolor } = theme;
-  function onSelectTheme(e) {
-    const value = e.target.value;
-    console.log(theme);
+  // const contextValues = useContext(GlobalContext);
+  // const { theme, setTheme } = contextValues;
+  // const { color, backgroundcolor } = theme;
+  const { setTheme, theme, setDefault1 } = useTheme();
+  console.log(theme);
 
-    if (value === "theme1") {
-      setTheme({ backgroundcolor: "red", color: "yellow" });
-    } else if (value === "theme2") {
-      setTheme({ backgroundcolor: "blue", color: "white" });
-    } else if (value === "theme3") {
-      setTheme({ backgroundcolor: "green", color: "white" });
+  // function onSelectTheme(e) {
+
+  //   const value = e.target.value;
+  //   console.log(theme);
+
+  //   if (value === "theme1") {
+  //     setTheme({ backgroundcolor: "red", color: "yellow" });
+  //   } else if (value === "theme2") {
+  //     setTheme({ backgroundcolor: "blue", color: "white" });
+  //   } else if (value === "theme3") {
+  //     setTheme({ backgroundcolor: "green", color: "white" });
+  //   } else {
+  //     setTheme({ backgroundcolor: "black", color: "white" });
+  //   }
+  // }
+
+  //function for zustand(e)
+  function onZustand(e) {
+    const value = e.target.value;
+
+    if (value === "lightblue") {
+      setTheme({ color: "white", bgColor: "blue" });
+    } else if (value === "lightgreen") {
+      setTheme({ color: "white", bgColor: "green" });
     } else {
-      setTheme({ backgroundcolor: "black", color: "white" });
+      setDefault1();
     }
   }
+
   return (
     <>
       <header
-        style={{ backgroundColor: backgroundcolor, color: color }}
+        style={{ backgroundColor: theme.bgColor, color: theme.color }}
         className="text-white body-font bg-black"
       >
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -51,14 +70,22 @@ function NavBar() {
               Contact
             </NavLink>
           </nav>
-          <form className="text-black mr-4">
-            <select onChange={onSelectTheme}>
-              <option value=""></option>
-              <option value="theme1">Theme1</option>
-              <option value="theme2">Theme2</option>
-              <option value="theme3">Theme3</option>
+          <div className="flex gap-2">
+            <select onChange={onZustand} className="text-black mr-4">
+              <option value="">default</option>
+              <option value="lightblue">Light Blue</option>
+              <option value="lightgreen">Light Green</option>
             </select>
-          </form>
+
+            {/* <form className="text-black mr-4">
+              <select onChange={onSelectTheme}>
+                <option value=""></option>
+                <option value="theme1">Theme1</option>
+                <option value="theme2">Theme2</option>
+                <option value="theme3">Theme3</option>
+              </select>
+            </form> */}
+          </div>
           <FiSearch className="text-xl"></FiSearch>
           <NavLink
             to="/login"
